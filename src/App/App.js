@@ -1,19 +1,21 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
   const [product, setProduct] = useState(1);
+
+  const setCountPlusOne = () => {
+    setCount(count + 1);
+    setCount2(count + 1);
+  }
+
   return (
     <div>
     <div className="App">
       <p>{count}</p>
-      <button onClick={() => {
-        setCount(count + 1);
-        setCount2(count + 1);
-        } 
-      }>Add One</button>
+      <button onClick={() => setCountPlusOne()}>Add One</button>
       <button onClick={() => setCount(count - 1)}>Subtract One</button>
     </div>
     <div>
